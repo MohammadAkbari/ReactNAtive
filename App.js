@@ -14,7 +14,7 @@ import { createStackNavigator} from 'react-navigation';
 class SampleRemote extends Component {
 	
   static navigationOptions = {
-    title: 'Sample Scroll View ',
+    title: 'Sample Remote',
   };
 	
   constructor(props) {
@@ -128,7 +128,7 @@ class SampleText extends Component {
 class SampleFlex extends Component {
 	
   static navigationOptions = {
-    title: 'Sample Flex !',
+    title: 'Sample Flex',
   };
 	
   render() {
@@ -140,18 +140,19 @@ class SampleFlex extends Component {
 	
     return (
       <View style={{ flex: 1 }}>
-        <SampleText title='Flex1111' />
-		
-		<Button title="Go to Scrolling" onPress={() => navigate('Scrolling')} />
-		<Button title="Go to Remote" onPress={() => navigate('Remote')} />	
-		
-        <View style={{ flex: 1, backgroundColor: 'powderblue' }} />
-        <View style={{ flex: 2, backgroundColor: 'skyblue' }} />
-        <View style={{ flex: 3, backgroundColor: 'steelblue' }} />
+      <View style={styles.buttomContainer}>
+        <View style={styles.button}>
+		      <Button title="Go to Scrolling" color="#850986" onPress={() => navigate('Scrolling')} />
+        </View>
+        <View style={styles.button}>
+		      <Button title="Go to Remote" color="#850944" onPress={() => navigate('Remote')} />	
+        </View>
+      </View>
+
+        <View style={{ flex: 1, backgroundColor: 'powderblue' }}><SampleText title='TOP' /></View>
+        <View style={{ flex: 2, backgroundColor: 'skyblue' }}><Blink text="BLINK" /></View>
+        <View style={{ flex: 3, backgroundColor: 'steelblue' }}><SampleText title='BOTTOM' /></View>
         <Image source={pic} style={styles.img} />
-        <Blink text="13" />
-        <SampleText title='BOTTOM' />
-		
       </View>
     );
   }
@@ -169,8 +170,6 @@ class SampleScrollView extends Component {
     };
     return (
       <ScrollView>
-        <SampleText title='Scroll View' />
-        <Blink text="18" />
         <SamplePizza />
       </ScrollView>
     );
@@ -203,5 +202,17 @@ const styles = StyleSheet.create({
   even: {
     backgroundColor: '#5abaff'
   },
-  text: { padding: 20 }
+  text: { padding: 20 },
+  button: {
+    backgroundColor: 'green',
+    width: '40%',
+    height: 40,
+    margin:10
+  },
+  buttomContainer: {
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+  }
 });
