@@ -1,0 +1,13 @@
+{
+  "expo": {
+	"sdkVersion": "27.0.0",
+	"icon":"./logo.png",
+	"name":"Native",
+	"ios": {
+      "bundleIdentifier": "com.fast.app1"
+    },
+    "android": {
+		"package": "com.fast.app1"
+    }
+  }
+}
